@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import Hero from "./components/hero/Hero";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import BlogPage from './components/Blog/BlogPage';
 
 function App() {
+  const targetDate = new Date('February 23, 2024 00:00:00');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* Index route */}
+        <Route path="/" element={<Hero targetDate={targetDate}/>} />
+
+        {/* Other routes */}
+        <Route path="/blog" element={<BlogPage/>} />
+      </Routes>
+    </Router>
   );
 }
 
