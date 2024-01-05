@@ -12,6 +12,8 @@ function App() {
         <Route path="/" element={<Hero targetDate={targetDate}/>} />
 
         {/* Other routes */}
+        <Route path="/blog" element={<BlogPage/>} />
+        <Route path="/blog/:blog_title" element={<BlogPage/>} />
       </Routes>
     </Router>
   );
